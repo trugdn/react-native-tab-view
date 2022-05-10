@@ -83,6 +83,8 @@ export default function PagerViewAdapter<T extends Route>({
 
     switch (pageScrollState) {
       case 'idle':
+        pagerRef.current?.setPageWithoutAnimation(0);
+        pagerRef.current?.setPageWithoutAnimation(indexRef.current);
         onSwipeEnd?.();
         return;
       case 'dragging': {
